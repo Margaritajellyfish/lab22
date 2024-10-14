@@ -118,6 +118,19 @@ public:
         }
     }
 
+    void pop_front(){
+        if (!head) return;
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+    void pop_back(){
+        if (!head) return;
+        Node* temp = tail;
+        tail = tail->prev;
+        delete temp;
+    }
+
     void print() {
         Node* current = head;
         if (!current) return;
