@@ -131,6 +131,8 @@ public:
         delete temp;
     }
 
+
+
     void print() {
         Node* current = head;
         if (!current) return;
@@ -160,7 +162,7 @@ public:
     }
 };
 
-// Driver program
+
 int main() {
     DoublyLinkedList list;
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
@@ -172,6 +174,26 @@ int main() {
 
     cout << "List backward: ";
     list.print_reverse();
+
+    int position;
+    cout << "Dlete position: ";
+    cin >> position;
+    list.delete_pos(position);
+    list.print();
+
+    cout <<" Pop front\n";
+    list.pop_front();
+    list.print();
+
+    cout <<" Pop backt\n";
+    list.pop_back();
+    list.print();
+
+    int val;
+    cout <<" Delete value: \n";
+    cin >> val;
+    list.delete_val(val);
+    list.print();
 
     cout << "Deleting list, then trying to print.\n";
     list.~DoublyLinkedList();
